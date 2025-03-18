@@ -7,7 +7,7 @@ spec:
   source:
     repoURL: "https://github.com/jingyang022/argoCD-180325.git"
     targetRevision: main
-    path: <path_to_manifest_directory>
+    path: .
   destination:
     server: https://kubernetes.default.svc
     namespace: yap-ns
