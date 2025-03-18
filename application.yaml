@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: yap-app
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/jingyang022/argoCD-180325.git"
+    targetRevision: main
+    path: <path_to_manifest_directory>
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: yap-ns
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
